@@ -14,7 +14,8 @@ export default {
     },
     methods: {
         search() {
-            axios.get("https://api.themoviedb.org/3/search/movie", {
+            // chiamata per film 
+            axios.get(this.store.apiUrl + this.store.movieSearch, {
                 params: {
                     api_key: "6d528e53b247ff47c3c0b248b11a367e",
                     query: this.store.searchText,
@@ -23,6 +24,18 @@ export default {
             .then((resp) => {
                 this.store.moviesList = resp.data.results;
             });
+
+            // chiamata per serie 
+            axios.get(this.store.apiUrl + this.store.tvSeriesSearch, {
+                params: {
+                    api_key: "6d528e53b247ff47c3c0b248b11a367e",
+                    query: this.store.searchText,
+                },
+            })
+            .then((resp) => {
+                this.store.seriesList = resp.data.results;
+            });
+
         },
     },
 };
