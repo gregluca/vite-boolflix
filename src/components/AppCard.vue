@@ -5,7 +5,7 @@ export default {
     },
     data() {
         return {
-            flags: ["en" , "it"],
+            flags: ["en" , "it" , "es", "fr"],
         };
     },
     methods: {
