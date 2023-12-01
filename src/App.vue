@@ -12,6 +12,10 @@ export default {
             store,
         };
     },
+    created() {
+        this.store.searchText = "Titanic";
+        this.search();
+    },
     methods: {
         search() {
             // chiamata per film 

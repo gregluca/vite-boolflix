@@ -5,6 +5,7 @@ export default {
     },
     data() {
         return {
+            showCard: false,
             flags: ["en" , "it" , "es", "fr","ru"],
         };
     },
@@ -17,7 +18,7 @@ export default {
             if(this.movieObj.poster_path) {
                 return `https://image.tmdb.org/t/p/w342/${this.movieObj.poster_path}`;
             } else {
-                return "../assets/img/no-image.png";
+                return new URL(`../assets/img/no-image.png`, import.meta.url).href;
             }
         }
     },
@@ -32,11 +33,11 @@ export default {
 };
 </script>
 <template>
-<div class="card">
+<div class="card" @mouseover="showCard = true" @mouseleave="showCard = false">
     <div class="poster">
         <img :src="getPoster()" alt="poster">
     </div>
-    <div class="show">
+    <div class="show" v-show="showCard">
         <h2>{{ movieObj.title ? movieObj.title : movieObj.name }}</h2>
         <h3>{{ movieObj.original_title ? movieObj.original_title : movieObj.original_name }}</h3>
         <img class="flag" :src="getImagePath(movieObj.original_language)" alt="" v-if="flags.includes(movieObj.original_language)">
@@ -55,12 +56,17 @@ export default {
     background-color:rgb(20 20 20) ;
     color: white;
     padding: 10px;
+    position: relative;
 
     .flag {
         width: 30px;
     }
     
     .show {
+        position: absolute;
+        background-color: rgba(20, 20, 20, 0.3);
+        width: 100%;
+        height: 100%;
         i {
             color: #ffd137;
         }
