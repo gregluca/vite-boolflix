@@ -36,17 +36,21 @@ export default {
     <div class="poster">
         <img :src="getPoster()" alt="poster">
     </div>
+    <div class="show">
         <h2>{{ movieObj.title ? movieObj.title : movieObj.name }}</h2>
-        <h3>{{ movieObj.original_title ? movieObj.original_title : movieObj.original.name }}</h3>
+        <h3>{{ movieObj.original_title ? movieObj.original_title : movieObj.original_name }}</h3>
         <img class="flag" :src="getImagePath(movieObj.original_language)" alt="" v-if="flags.includes(movieObj.original_language)">
         <p v-else>{{ movieObj.original_language }}</p>
         <div>
             <i v-for="i in fStar" class="fa-solid fa-star"></i>
             <i v-for="i in eStar" class="fa-regular fa-star"></i>
         </div>
+    </div>
 </div>  
 </template>
 <style scoped lang="scss">
+
+
 .flag {
     width: 80px;
 }

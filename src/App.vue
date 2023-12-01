@@ -17,7 +17,7 @@ export default {
             // chiamata per film 
             axios.get(this.store.apiUrl + this.store.movieSearch, {
                 params: {
-                    api_key: "6d528e53b247ff47c3c0b248b11a367e",
+                    api_key: "98fdd68cbd38cb8b6f04eb3fddbf88d8",
                     query: this.store.searchText,
                 },
             })
@@ -28,7 +28,7 @@ export default {
             // chiamata per serie 
             axios.get(this.store.apiUrl + this.store.tvSeriesSearch, {
                 params: {
-                    api_key: "6d528e53b247ff47c3c0b248b11a367e",
+                    api_key: "98fdd68cbd38cb8b6f04eb3fddbf88d8",
                     query: this.store.searchText,
                 },
             })
@@ -41,7 +41,6 @@ export default {
 };
 </script>
 <template>
-    <h2>ciao</h2>
     <AppHeader @psearch="search()"/>
     <AppList />
 </template>
