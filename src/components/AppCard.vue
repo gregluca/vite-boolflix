@@ -49,9 +49,30 @@ export default {
 </div>  
 </template>
 <style scoped lang="scss">
+.card {
+    height: 100%;
+    width: 200px;
+    background-color:rgb(20 20 20) ;
+    color: white;
+    padding: 10px;
 
-
-.flag {
-    width: 80px;
+    .flag {
+        width: 30px;
+    }
+    
+    .show {
+        i {
+            color: #ffd137;
+        }
+    }
 }
+
+.poster {
+    img {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+
 </style>

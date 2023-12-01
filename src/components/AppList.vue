@@ -13,20 +13,34 @@ export default {
 </script>
 <template>
 <section>
-    <h2>movie</h2>
-    <div v-for="movie in store.moviesList">
-        <AppCard :movieObj="movie" />
+    <h2>MOVIES</h2>
+    <div class="top">
+        <div v-for="movie in store.moviesList">
+            <AppCard :movieObj="movie" />
+        </div>
     </div>
-    <h2>serie</h2>
-    <div v-for="serie in store.seriesList">
-        <AppCard :movieObj="serie" />
+    <h2>SERIES</h2>
+    <div class="bottom">
+        <div v-for="serie in store.seriesList">
+            <AppCard :movieObj="serie" />
+        </div>
     </div>
 </section>
 </template>
 <style scoped lang="scss">
 section {
+    color: white;
+
+    h2 {
+        text-align: center;
+    }
+}
+.top {
     display: flex;
-    width: 90%;
-    margin: 0 auto;
+    overflow: scroll;
+}
+.bottom {
+    display: flex;
+    overflow: scroll;
 }
 </style>
