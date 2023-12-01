@@ -19,4 +19,8 @@ export default {
 </section>
 </template>
 <style scoped lang="scss">
+section {
+    display: flex;
+    flex-wrap: wrap;
+}
 </style>
