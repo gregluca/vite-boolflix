@@ -29,18 +29,33 @@ export default {
 </template>
 <style scoped lang="scss">
 section {
-    color: white;
+    color: #C6DE41;
 
     h2 {
         text-align: center;
+        margin: 60px;
     }
 }
-.top {
+.top, .bottom {
     display: flex;
-    overflow: scroll;
+    overflow: auto;
+    scrollbar-width: thin;  /* Per Firefox */
+    scrollbar-color: transparent transparent;  /* Per Firefox */
+    -ms-overflow-style: none;  /* Per IE e Edge */
 }
-.bottom {
-    display: flex;
-    overflow: scroll;
+
+.top::-webkit-scrollbar,
+.bottom::-webkit-scrollbar {
+    width: 12px;  /* Larghezza della barra di scorrimento */
+}
+
+.top::-webkit-scrollbar-thumb,
+.bottom::-webkit-scrollbar-thumb {
+    background-color: transparent;  /* Colore della parte mobile della barra di scorrimento */
+}
+
+.top::-webkit-scrollbar-track,
+.bottom::-webkit-scrollbar-track {
+    background-color: transparent;  /* Colore della parte fissa della barra di scorrimento */
 }
 </style>

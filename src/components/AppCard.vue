@@ -38,11 +38,12 @@ export default {
         <img :src="getPoster()" alt="poster">
     </div>
     <div class="show" v-show="showCard">
-        <h2>{{ movieObj.title ? movieObj.title : movieObj.name }}</h2>
+        <h2>Title: {{ movieObj.title ? movieObj.title : movieObj.name }}</h2>
         <h3>{{ movieObj.original_title ? movieObj.original_title : movieObj.original_name }}</h3>
         <img class="flag" :src="getImagePath(movieObj.original_language)" alt="" v-if="flags.includes(movieObj.original_language)">
-        <p v-else>{{ movieObj.original_language }}</p>
+        <p v-else> Language: {{ movieObj.original_language }}</p>
         <div>
+            Voto:
             <i v-for="i in fStar" class="fa-solid fa-star"></i>
             <i v-for="i in eStar" class="fa-regular fa-star"></i>
         </div>
@@ -51,11 +52,10 @@ export default {
 </template>
 <style scoped lang="scss">
 .card {
-    height: 100%;
-    width: 200px;
+    // height: 100%;
+    width: 300px;
     background-color:rgb(20 20 20) ;
     color: white;
-    padding: 10px;
     position: relative;
 
     .flag {
@@ -64,7 +64,7 @@ export default {
     
     .show {
         position: absolute;
-        background-color: rgba(20, 20, 20, 0.3);
+        background-color:#2D6E7E ;
         width: 100%;
         height: 100%;
         i {

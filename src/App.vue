@@ -1,4 +1,5 @@
 <script>
+import { gsap } from "gsap";
 import axios from "axios";
 import { store } from "./store.js";
 import AppHeader from './components/AppHeader.vue';
@@ -52,4 +53,5 @@ export default {
 <style lang="scss">
 @use"./style/general.scss";
 @import "@fortawesome/fontawesome-free/css/all.css";
+
 </style>

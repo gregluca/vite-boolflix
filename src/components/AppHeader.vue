@@ -28,10 +28,10 @@ header {
     justify-content: space-between;
     width: 100%;
     padding: 1rem;
-    background-color: black;
+    background-color:#071C21 ;
     color: white;
     h1 {
-        color: red;
+        color: #C6DE41;
     }
     h1:hover {
         opacity: .4;
@@ -39,6 +39,7 @@ header {
     button {
         text-decoration: none;
         border: none;
+        margin-left: 20px;
     }
     .left {
         display: flex;
